@@ -25,7 +25,7 @@ function Login({ onLoginSuccess }) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
         setMessage('Login successful!');
-        onLoginSuccess();
+        onLoginSuccess(data.user);
       } else {
         setMessage(data.msg || 'Login failed.');
       }
