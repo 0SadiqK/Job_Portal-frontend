@@ -9,7 +9,7 @@ function App() {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState(null);
+  const fetchJobs = async () => {
   const [currentPage, setCurrentPage] = useState('home');
 
   useEffect(() => {
