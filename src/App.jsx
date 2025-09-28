@@ -5,7 +5,7 @@ import Register from './Register';
 import JobSeekerDashboard from './JobSeekerDashboard';
 import EmployerDashboard from './EmployerDashboard';
 
-function App() {
+export default function App() {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -141,5 +141,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
