@@ -13,12 +13,14 @@ function App() {
   const [currentPage, setCurrentPage] = useState('home');
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    const storedUser = localStorage.getItem('user');
-    if (token && storedUser) {
-      setIsLoggedIn(true);
-      setUser(JSON.parse(storedUser));
-    }
+    const fetchJobs = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        const storedUser = localStorage.getItem('user');
+        if (token && storedUser) {
+          setIsLoggedIn(true);
+          setUser(JSON.parse(storedUser));
+        }
         // Mock job data since backend is not available
         const mockJobs = [
           {
