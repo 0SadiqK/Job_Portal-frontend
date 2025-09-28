@@ -19,12 +19,43 @@ function App() {
       setIsLoggedIn(true);
       setUser(JSON.parse(storedUser));
     }
-
-    const fetchJobs = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/jobs');
-        const data = await response.json();
-        setJobs(data);
+        // Mock job data since backend is not available
+        const mockJobs = [
+          {
+            id: 1,
+            title: 'Frontend Developer',
+            company: 'Tech Corp',
+            location: 'San Francisco, CA'
+          },
+          {
+            id: 2,
+            title: 'Backend Engineer',
+            company: 'StartupXYZ',
+            location: 'New York, NY'
+          },
+          {
+            id: 3,
+            title: 'Full Stack Developer',
+            company: 'Innovation Labs',
+            location: 'Austin, TX'
+          },
+          {
+            id: 4,
+            title: 'UI/UX Designer',
+            company: 'Design Studio',
+            location: 'Los Angeles, CA'
+          },
+          {
+            id: 5,
+            title: 'Data Scientist',
+            company: 'Analytics Inc',
+            location: 'Seattle, WA'
+          }
+        ];
+        
+        // Simulate network delay
+        await new Promise(resolve => setTimeout(resolve, 500));
+        setJobs(mockJobs);
       } catch (error) {
         console.error('Error fetching jobs:', error);
       } finally {
